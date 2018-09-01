@@ -1,9 +1,9 @@
-const {app, Menu, Tray, shell} = require('electron');
+const {app, Menu, Tray, shell, BrowserWindow, ipcMain} = require('electron');
 // Change config options
 const path = require('path');
 const moment = require('moment');
 
-const NOTIFY_TIME = "00:10";
+let NOTIFY_TIME = "00:10";
 const HAGO_WEB_URL = 'https://www.instagram.com/explore/tags/%EA%B3%A0%EC%96%91%EC%9D%B4/';
 app.dock.hide();
 
@@ -75,4 +75,20 @@ app.on('ready', () => {
     create_try_app();
     setInterval(run_by_notification, 500);
     // run_by_notification()
+
+    let win = new BrowserWindow({width: 300, height: 150});
+    win.loadURL(`file://${__dirname}/setup.html`)
+
+});
+
+app.on('window-all-closed', function () {
+    // On OS X it is common for applications and their menu bar
+    // to stay active until the user quits explicitly with Cmd + Qd
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
+});
+
+ipcMain.on('set-time', (event, time) => {
+    NOTIFY_TIME = time;
 });
