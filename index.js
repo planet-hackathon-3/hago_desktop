@@ -7,16 +7,16 @@ const HAGO_WEB_URL = 'https://www.instagram.com/explore/tags/%EA%B3%A0%EC%96%91%
 app.dock.hide();
 
 const MENU = [
-    {}
+    {label: 'Exit', click () { app.quit() }}
 ];
 
 let tray;
 let eNotify;
 
 const create_try_app = () => {
+    const contextMenu = Menu.buildFromTemplate(MENU);
     tray = new Tray(`${__dirname}/assets/favicon.jpeg`);
-    // const contextMenu = Menu.buildFromTemplate(MENU);
-    // tray.setContextMenu(contextMenu);
+    tray.setContextMenu(contextMenu);
 };
 
 const run_by_notification = () => {
