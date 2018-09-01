@@ -45,6 +45,7 @@ const run_by_notification = () => {
         clearInterval(menuBarNameTimeIntervalFn);
         reset_time();
         tray.setContextMenu(Menu.buildFromTemplate(COPY_MENU));
+        batchFlag = false;
     }
 };
 
