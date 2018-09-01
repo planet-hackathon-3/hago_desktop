@@ -10,6 +10,7 @@ app.dock.hide();
 const MENU = [
     {label: 'Start', click () {turn_on_off(false)}},
     {label: '냥이사진보기', click () { shell.openExternal(HAGO_WEB_URL)}},
+    {label: '설정', submenu: [{'label': '워킹타임설정', click () {createSetupWindow()}}]},
     {label: 'Exit', click () { app.quit() }}
 ];
 
@@ -70,15 +71,16 @@ const turn_on_off = (turn) => {
     tray.setContextMenu(Menu.buildFromTemplate(COPY_MENU));
 };
 
+const createSetupWindow = () => {
+    let win = new BrowserWindow({width: 300, height: 150});
+    win.loadURL(`file://${__dirname}/setup.html`)
+};
+
 app.on('ready', () => {
     eNotify = require('electron-notify');
     create_try_app();
     setInterval(run_by_notification, 500);
     // run_by_notification()
-
-    let win = new BrowserWindow({width: 300, height: 150});
-    win.loadURL(`file://${__dirname}/setup.html`)
-
 });
 
 app.on('window-all-closed', function () {
