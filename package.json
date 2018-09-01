@@ -23,11 +23,11 @@
       "target": [
         "default"
       ],
-      "icon": "../assets/dmg_image.jpg"
+      "icon": "../assets/dmg_image.jpeg"
     },
     "dmg": {
       "title": "Hago",
-      "icon": "../assets/dmg_image.jpg"
+      "icon": "../assets/dmg_image.jpeg"
     },
     "nsis": {
       "oneClick": false,
