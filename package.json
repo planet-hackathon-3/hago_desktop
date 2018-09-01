@@ -1,0 +1,49 @@
+{
+  "name": "hago_desktop",
+  "version": "1.0.0",
+  "description": "hago notification for desktop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:osx": "build --mac"
+  },
+  "author": "",
+  "license": "MIT",
+  "build": {
+    "productName": "Hago",
+    "appId": "com.hago.cat",
+    "asar": true,
+    "protocols": {
+      "name": "hago",
+      "schemes": [
+        "hago"
+      ]
+    },
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "icon": "../assets/dmg_image.jpg"
+    },
+    "dmg": {
+      "title": "Hago",
+      "icon": "../assets/dmg_image.jpg"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "output": "./dist/",
+      "app": "."
+    }
+  },
+  "dependencies": {
+    "electron-notify": "^0.1.0",
+    "node-notifier": "^5.2.1"
+  },
+  "devDependencies": {
+    "electron": "^2.0.8",
+    "electron-builder": "^20.28.3"
+  }
+}
