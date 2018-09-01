@@ -4,7 +4,7 @@ const path = require('path');
 const moment = require('moment');
 
 let NOTIFY_TIME = "00:10";
-const HAGO_WEB_URL = 'https://www.instagram.com/explore/tags/%EA%B3%A0%EC%96%91%EC%9D%B4/';
+const HAGO_WEB_URL = 'http://localhost:4200/';
 app.dock.hide();
 
 const MENU = [
