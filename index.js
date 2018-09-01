@@ -27,7 +27,7 @@ const reset_time = () => {
 
 const create_try_app = () => {
     contextMenu = Menu.buildFromTemplate(MENU);
-    tray = new Tray(`${__dirname}/assets/favicon.jpeg`);
+    tray = new Tray(`${__dirname}/assets/favicon2.png`);
     tray.setContextMenu(contextMenu);
 };
 
