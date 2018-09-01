@@ -7,6 +7,7 @@ const HAGO_WEB_URL = 'https://www.instagram.com/explore/tags/%EA%B3%A0%EC%96%91%
 app.dock.hide();
 
 const MENU = [
+    {label: '냥이사진보기', click () { shell.openExternal(HAGO_WEB_URL)}},
     {label: 'Exit', click () { app.quit() }}
 ];
 
